@@ -2,6 +2,7 @@ import { prismaClient } from "db/client";
 
 
 
+
 export default async function Home() {
   const users = await prismaClient.user.findMany();
   return (
@@ -9,4 +10,6 @@ export default async function Home() {
       {JSON.stringify(users)}
     </div>
   );
+  
 }
+ export const dynamic=`force-dynamic`
