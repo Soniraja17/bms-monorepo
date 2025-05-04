@@ -1,4 +1,4 @@
-From oven/bun:alpine
+FROM oven/bun:alpine
 
 WORKDIR /User/src/app
 
@@ -7,7 +7,7 @@ COPY ./bun.lock ./bun.lock
 COPY ./package.json ./package.json
 COPY ./turbo.json ./turbo.json
 
-COPY ./app/websocket ./app/websocket
+COPY ./apps/websocket ./apps/websocket
 
 
 COPY . .
