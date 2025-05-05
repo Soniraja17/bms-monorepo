@@ -22,7 +22,7 @@ jobs:
       - name: Docker build and push image
         uses: Docker/build-push-action@v2
         with:
-          context:
+          context: .
           file: ./docker/dockerfile.backend
           push: true
           tags: bms-monorepo/backend:${{github.sha}}
