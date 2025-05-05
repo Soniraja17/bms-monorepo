@@ -13,8 +13,8 @@ jobs:
       - name: Docker login
         uses: Docker/login-action@v2
         with:
-          username: ${secrets.DOCKERHUB_USERNAME}
-          password: ${secrets.DOCKERHUB_PASSWORD}
+          username: soniraja2608
+          password: Soni@1043
 
       - name: Docker build and push image
         uses: Docker/build-push-action@v2
