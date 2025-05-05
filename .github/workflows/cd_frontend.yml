@@ -1,4 +1,4 @@
-name: Deploy on ws
+name: Deploy on frontend
 on:
   push:
     branches: [main]
@@ -24,6 +24,8 @@ jobs:
         with:
           context: .
           file: ./docker/dockerfile.frontend
+          build-args:
+            DATABASE_URL=${{secrets.DATABASE_URL}}
           push: true
           tags: ${{secrets.DOCKERHUB_USERNAME}}/frontend:${{github.sha}}
        
