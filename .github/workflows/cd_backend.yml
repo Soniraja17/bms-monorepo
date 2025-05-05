@@ -2,12 +2,12 @@ name: Deploy on backend
 on:
   push:
     branches: [main]
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: github/action@v2
+      - uses: actions/checkout@v2
 
 
       - name: Docker login
