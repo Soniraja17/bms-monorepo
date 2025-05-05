@@ -16,7 +16,7 @@ COPY ./apps/websocket ./app/websocket
 
 COPY . .
 
-RUN npm install  
+
 
 RUN bun install
 RUN bun run db:generate
