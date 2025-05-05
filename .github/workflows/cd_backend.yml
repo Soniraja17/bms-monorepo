@@ -1,0 +1,26 @@
+name: Deploy on backend
+on:
+  push:
+    branches: [main]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: github/action@v2
+
+
+      - name: Docker login
+        uses: Docker/login-action@v2
+        with:
+          username: ${secrets.DOCKERHUB_USERNAME}
+          password: ${secrets.DOCKERHUB_PASSWORD}
+
+      - name: Docker build and push image
+        uses: Docker/build-push-action@v2
+        with:
+          context:
+          file: ./docker/dockerfile.backend
+          push: true
+          tags: bms-monorepo/backend:${github.sha}
+       
