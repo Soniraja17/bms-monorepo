@@ -22,5 +22,5 @@ jobs:
           context:
           file: ./docker/dockerfile.backend
           push: true
-          tags: bms-monorepo/backend:${github.sha}
+          tags: monorepo/backend:${github.sha}
        
